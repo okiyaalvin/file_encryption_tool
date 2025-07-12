@@ -1,21 +1,43 @@
-encrypt.py file has the encryption and functions.
+# 🔐 Encryption App — Secure Login and File Encryption System
 
-Main.py file is the main code which has the UI allowing user to log in or create account.
+This project provides a simple UI-based system that allows users to **create accounts**, **log in**, and **securely encrypt/decrypt data** using strong cryptographic techniques.
 
-The UI file also has authentication functions.
+---
 
-######################################################
+## 🗂️ Project Structure
 
-The user is allowed to create acoount,from which upon successful account creation, 
+- `main.py`: The main application file. Handles the **user interface** and authentication flow (login and account creation).
+- `encrypt.py`: Contains all **encryption and decryption logic** using the Fernet algorithm.
+- UI module: Built into `main.py`, includes the authentication interface and logic.
 
-He/she can log into the account
+---
 
-The main.py file does the authentication and if successful, the encrypt.py file is called
+## ✅ Features
 
-It then can be used to perform the encruption, decryption.
+- User can **create a new account**
+- User can **log in** with valid credentials
+- Upon successful authentication, the system enables:
+  - **Encryption of sensitive data**
+  - **Decryption of previously encrypted data**
 
-########################################################
+---
 
-The algorithm used is fernet algorithm which is a combination of AES 128 and Cipher Block Chaining
+## 🔒 Encryption Algorithm
 
-This make it a secure encryption algoriythm as it encrypts multiple blocks of data at a time.
+This project uses the **Fernet** encryption algorithm, which is part of the `cryptography` library.
+
+- Fernet is built on **AES 128-bit encryption** in **CBC mode (Cipher Block Chaining)** with PKCS7 padding.
+- It ensures that:
+  - Data cannot be read or altered without the encryption key
+  - Encrypted data includes a message authentication code (MAC) for tamper detection
+
+This makes Fernet a **secure, authenticated, symmetric encryption method** suitable for encrypting user data.
+
+---
+
+## 🛠️ Prerequisites
+
+Install the required libraries before running the app:
+
+```bash
+pip install cryptography pycryptodome
